@@ -1,12 +1,8 @@
-.env
 db.sqlite3
-retailshop
 Scripts
 Lib
 pyvenv.cfg
 _pycache_
-
-db.sqlite3
 __init__.py
 __pycache__
 .env/
@@ -16,5 +12,4 @@ venv/
 *.env
 
 *.pyc
-db.sqlite3
 staticfiles/
