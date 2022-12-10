@@ -31,7 +31,7 @@ class Cart(models.Model):
     )
 
     user = models.ForeignKey(CustomUser, related_name="user", on_delete=models.CASCADE)
-    cart_products = models.ForeignKey(Product, related_name="cart_products", null=True, on_delete=models.CASCADE)
+    cart_products = models.ForeignKey(Product, related_name="products", null=True, on_delete=models.CASCADE)
     product_quantity = models.IntegerField()
     product_cost = models.FloatField(default=0.00)
     date_of_ordering = models.DateTimeField(auto_now_add=True)
