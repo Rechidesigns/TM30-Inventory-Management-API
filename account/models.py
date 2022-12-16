@@ -11,4 +11,4 @@ class CustomUser(AbstractUser):
     gender = models.CharField(max_length=10, default='male', choices=GENDER_CHOICES)
     location = models.CharField(max_length=210)
 
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'gender', 'location']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'email']

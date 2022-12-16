@@ -24,6 +24,9 @@ class Product(models.Model):
         return self.cart_product.all().values().count()
 
 
+
+
+
 class Cart(models.Model):
     PRODUCT_STATUS = (
         ('pending', 'Pending'),
@@ -31,7 +34,7 @@ class Cart(models.Model):
     )
 
     user = models.ForeignKey(CustomUser, related_name="user", on_delete=models.CASCADE)
-    cart_products = models.ForeignKey(Product, related_name="products", null=True, on_delete=models.CASCADE)
+    cart_product = models.ManyToManyField(Product, blank=False)
     product_quantity = models.IntegerField()
     product_cost = models.FloatField(default=0.00)
     date_of_ordering = models.DateTimeField(auto_now_add=True)
@@ -43,3 +46,4 @@ class Cart(models.Model):
     @property
     def cart_content(self):
         return model_to_dict(self.cart_products, fields=['product_name', 'price'])
+
